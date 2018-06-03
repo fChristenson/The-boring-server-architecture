@@ -1,0 +1,9 @@
+html
+  include ./partials/header.pug
+  body
+    h1 Our boring Todo list
+    ul
+      each val in todos
+        li= `${val.todo} - ${val.user.name}`
+    form(method="post", action="/todos")
+      input(type="text", name="todo", placeholder="todo")

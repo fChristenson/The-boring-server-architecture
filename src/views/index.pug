@@ -1,0 +1,8 @@
+html
+  include ./partials/header.pug
+  body
+    h1 Our boring application
+    form(action="/login", method="post")
+      input(type="text", name="username", placeholder="username")
+      input(type="password", name="password", placeholder="password")
+      input(type="submit", value="login")

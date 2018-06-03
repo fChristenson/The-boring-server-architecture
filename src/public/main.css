@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: steelblue;
+  color: ghostwhite;
+  padding: 12px;
+}
+
+h1 {
+  padding: 8px 0;
+}
+
+input {
+  display: block;
+  padding: 4px;
+  margin: 4px 0;
+}
