@@ -1,5 +1,6 @@
 class TodoService {
-  constructor(userService) {
+  constructor(Todo, userService) {
+    this.Todo = Todo;
     this.userService = userService;
     this.listTodos = this.listTodos.bind(this);
     this.addTodo = this.addTodo.bind(this);

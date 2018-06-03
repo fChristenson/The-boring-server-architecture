@@ -1,5 +1,6 @@
 class UserService {
-  constructor() {
+  constructor(User) {
+    this.User = User;
     this.getUser = this.getUser.bind(this);
     this.getUserById = this.getUserById.bind(this);
   }

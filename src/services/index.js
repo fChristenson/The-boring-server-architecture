@@ -1,8 +1,9 @@
 const TodoService = require("./TodoService");
 const UserService = require("./UserService");
+const { Todo, User } = require("../models");
 
-const userService = new UserService();
-const todoService = new TodoService(userService);
+const userService = new UserService(User);
+const todoService = new TodoService(Todo, userService);
 
 module.exports = {
   todoService,
