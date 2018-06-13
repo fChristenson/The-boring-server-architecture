@@ -1,22 +1,17 @@
 class TodoService {
-  constructor(Todo, userService) {
+  constructor(Todo) {
     this.Todo = Todo;
-    this.userService = userService;
     this.listTodos = this.listTodos.bind(this);
     this.addTodo = this.addTodo.bind(this);
   }
 
   async listTodos() {
-    return [{ todo: "foo", user: { name: "foobar" } }];
+    return this.Todo.find({});
   }
 
-  async addTodo(todo, userId) {
-    const user = await this.userService.getUserById(userId);
-    return this._saveTodo(todo, user);
-  }
-
-  async _saveTodo(todo, user) {
-    return {};
+  async addTodo(todo) {
+    await todo.save();
+    return todo;
   }
 }
 

@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
-const { todoService } = require("../services");
+const Todo = require("../models/TodoModel");
+const { todoService, userService } = require("../services");
 
 router.get("/todos", isLoggedIn, async (req, res) => {
   const todos = await todoService.listTodos();
@@ -9,8 +10,9 @@ router.get("/todos", isLoggedIn, async (req, res) => {
 
 router.post("/todos", isLoggedIn, async (req, res) => {
   const { todo } = req.body;
-  const userId = req.session.userId;
-  await todoService.addTodo(todo, userId);
+  const user = await userService.getUserById(req.session.userId);
+  const newTodo = new Todo({ todo, user });
+  await todoService.addTodo(newTodo);
   res.redirect("/todos");
 });
 

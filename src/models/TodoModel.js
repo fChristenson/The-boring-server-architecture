@@ -6,4 +6,4 @@ const Todo = new Schema({
   user: Object
 });
 
-module.exports = Todo;
+module.exports = mongoose.model("Todo", Todo);

@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db/app
+    ports:
+      - "3000:3000"
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"

@@ -1,10 +1,21 @@
 {
-  "name": "",
-  "version": "",
+  "name": "the-boring-application",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npx jest",
+    "test:watch": "npx jest --watch",
+    "make": "docker run --rm -p 27017:27017 -d --name db mongo & npm install",
+    "build": "docker build ."
+  },
   "dependencies": {
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.10",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "jest": "^23.1.0",
+    "supertest": "^3.1.0"
   }
 }
