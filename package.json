@@ -5,8 +5,7 @@
     "start": "node server.js",
     "test": "npx jest",
     "test:watch": "npx jest --watch",
-    "make": "docker run --rm -p 27017:27017 -d --name db mongo & npm install",
-    "build": "docker build ."
+    "make": "docker run --rm -p 27017:27017 -d --name db mongo & npm install"
   },
   "dependencies": {
     "express": "^4.16.3",
